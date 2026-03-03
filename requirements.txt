@@ -1,0 +1,6 @@
+camel-ai==0.2.74
+pybullet
+matplotlib
+numpy
+chromadb 
+python-dotenv
