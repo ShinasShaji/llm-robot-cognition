@@ -2,6 +2,12 @@ import backoff
 import pybullet as p
 import numpy as np
 
+import sys
+from pathlib import Path
+
+root_dir = Path(__file__).resolve().parent
+sys.path.append(str(root_dir))
+
 from camel.agents import ChatAgent
 from typing import Dict, TYPE_CHECKING
 
@@ -33,7 +39,7 @@ class Robot:
         # Load robot arm on top of base
         # Adjust start position to be on top of the cube base
         robot_start_pos = [base_start_pos[0], base_start_pos[1], base_size[2]]
-        self.robot_id = p.loadURDF("models/iiwa.urdf", robot_start_pos, useFixedBase=False)
+        self.robot_id = p.loadURDF(str(root_dir / "models/iiwa.urdf"), robot_start_pos, useFixedBase=False)
 
         p.resetBasePositionAndOrientation(self.robot_id, robot_start_pos,[0.0,0.0,0.0,1.0])
         # Attach arm to base using fixed constraint
