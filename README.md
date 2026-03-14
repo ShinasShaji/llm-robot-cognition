@@ -11,7 +11,7 @@ The system demonstrates how LLMs can function as cognitive controllers for robot
 
 ## Prerequisites
 
-To be able to run this project, execute the following command to install the dependencies:
+To be able to run this project, first install python 3.13 and execute the following command to install the dependencies:
 
 ```bash
 pip install -r requirements.txt
